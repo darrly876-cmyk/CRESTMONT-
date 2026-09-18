@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Crestmont Digital Assets</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- TOAST -->
+<div
+    class="dashboard-toast"
+    id="dashboardToast"
+    aria-live="polite"
+></div>
+
+    <!-- DASHBOARD HEADER -->
+    <header class="dashboard-header">
+
+        <div class="dashboard-header-left">
+
+            <button
+                type="button"
+                class="dashboard-menu-btn"
+                id="dashboardMenuBtn"
+                aria-label="Open dashboard menu"
+            >
+                ☰
+            </button>
+
+            <a href="dashboard.html" class="dashboard-logo">
+                Crestmont <span>Digital Assets</span>
+            </a>
+
+        </div>
+
+        <div class="dashboard-header-right">
+
+            <button
+                type="button"
+                class="dashboard-icon-btn"
+                id="notificationBtn"
+                aria-label="Notifications"
+            >
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+            <a
+                href="profile.html"
+                class="dashboard-profile"
+                id="profileButton"
+            >
+                <span class="profile-avatar">U</span>
+                <span class="profile-name">User</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD LAYOUT -->
+    <div class="dashboard-layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+            <nav class="dashboard-nav">
+
+                <a href="#overview" class="dashboard-nav-link active">
+                    <span>▣</span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="#portfolio" class="dashboard-nav-link">
+                    <span>◈</span>
+                    <span>Portfolio</span>
+                </a>
+
+                <a href="deposit.html" class="dashboard-nav-link">
+                    <span>＋</span>
+                    <span>Deposit</span>
+                </a>
+
+                <a href="withdraw.html" class="dashboard-nav-link">
+                    <span>↗</span>
+                    <span>Withdraw</span>
+                </a>
+
+                <a href="transactions.html" class="dashboard-nav-link">
+                    <span>≡</span>
+                    <span>Transactions</span>
+                </a>
+
+                <a href="investments.html" class="dashboard-nav-link">
+                    <span>◉</span>
+                    <span>Investments</span>
+                </a>
+
+                <div class="dashboard-nav-divider"></div>
+
+                <p class="dashboard-nav-title">
+                    ACCOUNT
+                </p>
+
+                <a href="profile.html" class="dashboard-nav-link">
+                    <span>●</span>
+                    <span>Profile</span>
+                </a>
+
+                <a href="settings.html" class="dashboard-nav-link">
+                    <span>⚙</span>
+                    <span>Settings</span>
+                </a>
+
+                <a href="support.html" class="dashboard-nav-link">
+    <span>?</span>
+    <span>Support</span>
+</a>
+
+                <a href="#logout" class="dashboard-nav-link dashboard-logout">
+                    <span>↪</span>
+                    <span>Log Out</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN DASHBOARD -->
+        <main class="dashboard-main">
+
+
+            <!-- OVERVIEW -->
+            <section
+                class="dashboard-section dashboard-overview"
+                id="overview"
+            >
+
+                <div class="dashboard-welcome">
+
+                    <div>
+                        <p class="dashboard-eyebrow">
+                            DASHBOARD
+                        </p>
+
+                        <h1>
+                            Welcome Back,
+                            <span id="dashboardFirstName">
+                                User
+                            </span>
+                        </h1>
+
+                        <p>
+                            Here's an overview of your digital asset portfolio.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-currency">
+
+                        <label for="currencySwitcher">
+                            Currency
+                        </label>
+
+                        <select id="currencySwitcher">
+                            <option value="USD">USD $</option>
+                            <option value="EUR">EUR €</option>
+                            <option value="GBP">GBP £</option>
+                            <option value="JPY">JPY ¥</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT STATUS -->
+                <div class="account-status-grid">
+
+                    <div class="status-card">
+                        <span class="status-label">
+                            Account
+                        </span>
+
+                        <strong class="status-value">
+                            Awaiting verification
+                        </strong>
+                    </div>
+
+                    <div class="status-card">
+                        <span class="status-label">
+                            Identity
+                        </span>
+
+                        <strong class="status-value">
+                            Not yet verified
+                        </strong>
+                    </div>
+
+                    <div class="status-card">
+                        <span class="status-label">
+                            Deposit
+                        </span>
+
+                        <strong
+                            class="status-value"
+                            id="depositStatus"
+                        >
+                            No pending deposit
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- PORTFOLIO CARDS -->
+                <div class="portfolio-card-grid">
+
+                    <article class="portfolio-card primary">
+
+                        <div class="portfolio-card-top">
+                            <span>Total Portfolio Value</span>
+                            <span>◈</span>
+                        </div>
+
+                        <strong
+                            class="portfolio-balance"
+                            id="portfolioBalance"
+                        >
+                            $0.00
+                        </strong>
+
+                        <p>
+                            Current portfolio value
+                        </p>
+
+                    </article>
+
+
+                    <article class="portfolio-card">
+
+                        <div class="portfolio-card-top">
+                            <span>Total Invested</span>
+                            <span>↗</span>
+                        </div>
+
+                        <strong id="totalInvested">
+                            $0.00
+                        </strong>
+
+                        <p>
+                            Total funds invested
+                        </p>
+
+                    </article>
+
+
+                    <article class="portfolio-card">
+
+                        <div class="portfolio-card-top">
+                            <span>Available Balance</span>
+                            <span>◎</span>
+                        </div>
+
+                        <strong id="availableBalance">
+                            $0.00
+                        </strong>
+
+                        <p>
+                            Available for eligible actions
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <!-- PORTFOLIO CHART -->
+                <div class="dashboard-panel">
+
+                    <div class="dashboard-panel-header">
+
+                        <div>
+                            <h2>Portfolio Performance</h2>
+
+                            <p>
+                                Balance history will appear here
+                                as account activity is recorded.
+                            </p>
+                        </div>
+
+                        <span class="chart-period">
+                            30 Days
+                        </span>
+
+                    </div>
+
+                    <div class="portfolio-chart">
+
+                        <div class="chart-empty-state">
+                            <span>◈</span>
+
+                            <strong>
+                                No portfolio history yet
+                            </strong>
+
+                            <p>
+                                Your portfolio chart will update
+                                when real account activity is available.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PORTFOLIO -->
+            <section
+                class="dashboard-section"
+                id="portfolio"
+            >
+
+                <div class="section-heading-dashboard">
+
+                    <div>
+                        <p class="dashboard-eyebrow">
+                            YOUR ASSETS
+                        </p>
+
+                        <h2>Portfolio</h2>
+
+                        <p>
+                            View your digital asset holdings.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="asset-holdings-grid">
+
+                    <div class="asset-holding-card">
+                        <span class="asset-symbol">BTC</span>
+                        <strong>Bitcoin</strong>
+                        <span>$0.00</span>
+                    </div>
+
+                    <div class="asset-holding-card">
+                        <span class="asset-symbol">ETH</span>
+                        <strong>Ethereum</strong>
+                        <span>$0.00</span>
+                    </div>
+
+                    <div class="asset-holding-card">
+                        <span class="asset-symbol">USDT</span>
+                        <strong>Tether</strong>
+                        <span>$0.00</span>
+                    </div>
+
+                    <div class="asset-holding-card">
+                        <span class="asset-symbol">BNB</span>
+                        <strong>BNB</strong>
+                        <span>$0.00</span>
+                    </div>
+
+                    <div class="asset-holding-card">
+                        <span class="asset-symbol">XRP</span>
+                        <strong>XRP</strong>
+                        <span>$0.00</span>
+                    </div>
+
+                    <div class="asset-holding-card">
+                        <span class="asset-symbol">SOL</span>
+                        <strong>Solana</strong>
+                        <span>$0.00</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+
+                <div class="dashboard-footer-brand">
+
+                    <h3>
+                        Crestmont Digital Assets
+                    </h3>
+
+                    <p>
+                        Digital asset investment & portfolio services
+                    </p>
+
+                </div>
+
+                <div class="dashboard-footer-address">
+
+                    <strong>
+                        Head offices
+                    </strong>
+
+                    <p>
+                        (Business address)<br>
+                        City, State, ZIP<br>
+                        Country
+                    </p>
+
+                </div>
+
+                <div class="dashboard-footer-links">
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Risk Disclosure
+                    </a>
+
+                    <a href="#">
+                        Fees
+                    </a>
+
+                    <a href="support.html">
+                        Contact Support
+                    </a>
+
+                </div>
+
+                <div class="dashboard-footer-icons">
+
+                    <a href="#" aria-label="WhatsApp">◉</a>
+                    <a href="#" aria-label="Telegram">➤</a>
+                    <a href="mailto:support@crestmontdigitalassets.com" aria-label="Email">@</a>
+                    <a href="#" aria-label="Phone">☎</a>
+
+                </div>
+
+                <p class="dashboard-copyright">
+                    Crestmont Digital Assets. All rights reserved 2026.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- NOTIFICATION PANEL -->
+    <aside
+        class="notification-panel"
+        id="notificationPanel"
+        aria-hidden="true"
+    >
+
+        <div class="notification-panel-header">
+
+            <h3>Notifications</h3>
+
+            <button
+                type="button"
+                id="closeNotifications"
+                aria-label="Close notifications"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="notification-list">
+
+            <div class="notification-empty">
+
+                <span>🔔</span>
+
+                <strong>
+                    No new notifications
+                </strong>
+
+                <p>
+                    Account activity and security alerts
+                    will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+<script>
+    (async function () {
+        const { data, error } =
+            await supabaseClient.auth.getUser();
+
+        if (error || !data.user) {
+            window.location.href = "signin.html";
+        }
+    })();
+</script>
+
+</body>
+</html>

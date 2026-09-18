@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Crestmont Digital Assets</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <a href="index.html" class="auth-logo">
+                Crestmont <span>Digital Assets</span>
+            </a>
+
+            <div class="auth-heading">
+                <p class="auth-eyebrow">GET STARTED</p>
+                <h1>Create Your Account</h1>
+                <p>
+                    Create your Crestmont Digital Assets account to access
+                    your investment portfolio and account features.
+                </p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            placeholder="Enter your first name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="middleName">
+                            Middle Name <span>(Optional)</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="middleName"
+                            name="middleName"
+                            placeholder="Enter your middle name"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        placeholder="Enter your last name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Mobile Phone</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your mobile number"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+
+                        <select id="country" name="country" required>
+                            <option value="">Select country</option>
+                            <option value="United States">United States</option>
+                            <option value="Canada">Canada</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Australia">Australia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input
+                            type="date"
+                            id="dateOfBirth"
+                            name="dob"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a strong password"
+                        minlength="8"
+                        required
+                    >
+
+                    <small class="password-help">
+                        Password must contain at least 8 characters,
+                        1 capital letter, and 1 number.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="referralCode">
+                        Referral Code <span>(Optional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="referralCode"
+                        name="referralCode"
+                        placeholder="Enter referral code"
+                    >
+                </div>
+
+                <div class="checkbox-group">
+
+                    <label class="checkbox-label">
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+
+                        <span>
+                            I agree to the
+                            <a href="#">Terms of Service</a>
+                            and acknowledge the
+                            <a href="#">Risk Disclosure</a>.
+                        </span>
+                    </label>
+
+                </div>
+
+                <div class="checkbox-group">
+
+                    <label class="checkbox-label">
+                        <input
+                            type="checkbox"
+                            id="accurateInfo"
+                            name="accurateInfo"
+                            required
+                        >
+
+                        <span>
+                            I confirm that the information I provided
+                            is accurate and complete.
+                        </span>
+                    </label>
+
+                </div>
+
+                <div class="checkbox-group">
+
+                    <label class="checkbox-label">
+                        <input
+                            type="checkbox"
+                            id="rememberPassword"
+                            name="rememberPassword"
+                        >
+
+                        <span>
+                            Remember my password
+                        </span>
+                    </label>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="auth-submit"
+                >
+                    Create Account
+                </button>
+
+                <div
+                    id="registerMessage"
+                    class="auth-message"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+            <div class="auth-footer-text">
+                Already have an account?
+                <a href="signin.html">Sign In</a>
+            </div>
+
+            <a href="index.html" class="back-home">
+                ← Back to Homepage
+            </a>
+
+        </section>
+
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Crestmont Digital Assets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- TOAST -->
+    <div
+        class="dashboard-toast"
+        id="dashboardToast"
+        aria-live="polite"
+    ></div>
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+        <div class="dashboard-header-left">
+
+            <button
+                type="button"
+                class="dashboard-menu-button"
+                id="dashboardMenuButton"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+            <a href="dashboard.html" class="dashboard-brand">
+                Crestmont Digital Assets
+            </a>
+
+        </div>
+
+        <div class="dashboard-header-right">
+
+            <button
+                type="button"
+                class="notification-button"
+                id="notificationButton"
+                aria-label="Notifications"
+            >
+                🔔
+            </button>
+
+            <a href="profile.html" class="profile-button">
+                <span class="profile-avatar">U</span>
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+        <nav class="dashboard-nav">
+
+            <a href="dashboard.html" class="dashboard-nav-link">
+                <span>⌂</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="dashboard.html#portfolio" class="dashboard-nav-link">
+                <span>◈</span>
+                <span>Portfolio</span>
+            </a>
+
+            <a href="deposit.html" class="dashboard-nav-link">
+                <span>＋</span>
+                <span>Deposit</span>
+            </a>
+
+            <a href="withdraw.html" class="dashboard-nav-link">
+                <span>↗️</span>
+                <span>Withdraw</span>
+            </a>
+
+            <a href="transactions.html" class="dashboard-nav-link">
+                <span>☷</span>
+                <span>Transactions</span>
+            </a>
+
+            <a href="investments.html" class="dashboard-nav-link">
+                <span>◉</span>
+                <span>Investments</span>
+            </a>
+
+            <a href="profile.html" class="dashboard-nav-link active">
+                <span>●</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="dashboard-nav-link">
+                <span>⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="support.html" class="dashboard-nav-link">
+                <span>?</span>
+                <span>Support</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <div class="dashboard-page-heading">
+            <span class="eyebrow">ACCOUNT</span>
+
+            <h1>My Profile</h1>
+
+            <p>
+                View and manage your personal account information.
+            </p>
+        </div>
+
+
+        <!-- PROFILE HEADER -->
+        <section class="profile-card">
+
+            <div class="profile-card-main">
+
+                <div class="profile-large-avatar">
+                    U
+                </div>
+
+                <div>
+                    <span class="eyebrow">ACCOUNT PROFILE</span>
+
+                    <h2>Welcome to your profile</h2>
+
+                    <p>
+                        Your personal information and account details will
+                        appear here.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAL INFORMATION -->
+        <section class="settings-card">
+
+            <div class="settings-card-header">
+
+                <div>
+                    <span class="eyebrow">01</span>
+
+                    <h2>Personal Information</h2>
+
+                    <p>
+                        Keep your account information accurate and up to date.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-form-grid">
+
+                <div class="form-group">
+                    <label for="profileFirstName">
+                        First Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileFirstName"
+                        placeholder="First name"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="profileMiddleName">
+                        Middle Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileMiddleName"
+                        placeholder="Middle name (optional)"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="profileLastName">
+                        Last Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileLastName"
+                        placeholder="Last name"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="profileEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="profileEmail"
+                        placeholder="Email address"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="profilePhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="profilePhone"
+                        placeholder="Phone number"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="profileCountry">
+                        Country
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileCountry"
+                        placeholder="Country"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="profileDob">
+                        Date of Birth
+                    </label>
+
+                    <input
+                        type="date"
+                        id="profileDob"
+                    >
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="auth-submit"
+                id="saveProfileButton"
+            >
+                Save Changes
+            </button>
+
+            <div
+                id="profileMessage"
+                class="auth-message"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+
+        <!-- PROFILE COMPLETION -->
+        <section class="settings-card">
+
+            <div class="settings-card-header">
+
+                <div>
+                    <span class="eyebrow">02</span>
+
+                    <h2>Profile Completion</h2>
+
+                    <p>
+                        Complete your profile information to keep your account
+                        details up to date.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-completion">
+
+                <div class="profile-completion-bar">
+                    <span style="width: 0%;"></span>
+                </div>
+
+                <strong>
+                    Profile completion will be calculated from your account
+                    information.
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- VERIFICATION -->
+        <section class="settings-card">
+
+            <div class="settings-card-header">
+
+                <div>
+                    <span class="eyebrow">03</span>
+
+                    <h2>Account Verification</h2>
+
+                    <p>
+                        Verification status will be displayed here after the
+                        secure account system is connected.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+
+        <div>
+            <strong>Crestmont Digital Assets</strong>
+
+            <p>
+                Digital asset investment &amp; portfolio services.
+            </p>
+        </div>
+
+
+        <div>
+            <p>Head Offices</p>
+            <p>Address to be added</p>
+        </div>
+
+
+        <div>
+            <p>Support</p>
+            <p>support@crestmontdigitalassets.com</p>
+        </div>
+
+
+        <div>
+            <p>
+                Terms · Privacy · Risk Disclosure · Fees
+            </p>
+        </div>
+
+
+        <p class="dashboard-footer-bottom">
+            Crestmont Digital Assets. All rights reserved 2026.
+        </p>
+
+    </footer>
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const saveButton = document.getElementById("saveProfileButton");
+    const message = document.getElementById("profileMessage");
+
+    const firstName = document.getElementById("profileFirstName");
+    const middleName = document.getElementById("profileMiddleName");
+    const lastName = document.getElementById("profileLastName");
+    const email = document.getElementById("profileEmail");
+    const phone = document.getElementById("profilePhone");
+    const country = document.getElementById("profileCountry");
+    const dateOfBirth = document.getElementById("profileDob");
+
+    if (!saveButton || !message) {
+        return;
+    }
+
+    // LOAD PROFILE
+    try {
+
+        const { data: userData, error: userError } =
+            await supabaseClient.auth.getUser();
+
+        if (userError || !userData.user) {
+            window.location.href = "signin.html";
+            return;
+        }
+
+        const user = userData.user;
+
+        const { data: profile, error: profileError } =
+            await supabaseClient
+                .from("profiles")
+                .select("*")
+                .eq("id", user.id)
+                .single();
+
+        if (profileError) {
+            console.error("Profile load error:", profileError);
+            message.textContent =
+                "Unable to load your profile.";
+            return;
+        }
+
+        firstName.value = profile.first_name || "";
+        middleName.value = profile.middle_name || "";
+        lastName.value = profile.last_name || "";
+        email.value = profile.email || user.email || "";
+        phone.value = profile.phone || "";
+        country.value = profile.country || "";
+        dateOfBirth.value = profile.date_of_birth || "";
+
+    } catch (error) {
+
+        console.error("Profile load error:", error);
+
+        message.textContent =
+            "Something went wrong while loading your profile.";
+    }
+
+
+    // SAVE PROFILE
+    saveButton.addEventListener("click", async function () {
+
+        message.textContent = "Saving your profile...";
+        saveButton.disabled = true;
+
+        try {
+
+            const { data: userData, error: userError } =
+                await supabaseClient.auth.getUser();
+
+            if (userError || !userData.user) {
+                window.location.href = "signin.html";
+                return;
+            }
+
+            const user = userData.user;
+
+            const updates = {
+                first_name: firstName.value.trim(),
+                middle_name: middleName.value.trim(),
+                last_name: lastName.value.trim(),
+                email: email.value.trim(),
+                phone: phone.value.trim(),
+                country: country.value.trim(),
+                date_of_birth: dateOfBirth.value || null,
+                updated_at: new Date().toISOString()
+            };
+
+            const { error: updateError } =
+                await supabaseClient
+                    .from("profiles")
+                    .update(updates)
+                    .eq("id", user.id);
+
+            if (updateError) {
+
+                console.error(
+                    "Profile update error:",
+                    updateError
+                );
+
+                message.textContent =
+                    "Unable to save your profile. Please try again.";
+
+                return;
+            }
+
+            message.textContent =
+                "Profile saved successfully.";
+
+        } catch (error) {
+
+            console.error(
+                "Profile save error:",
+                error
+            );
+
+            message.textContent =
+                "Something went wrong. Please try again.";
+
+        } finally {
+
+            saveButton.disabled = false;
+        }
+    });
+
+});
+
+<script 
+
+</body>
+</html>

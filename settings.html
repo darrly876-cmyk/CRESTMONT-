@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Crestmont Digital Assets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- TOAST -->
+    <div
+        class="dashboard-toast"
+        id="dashboardToast"
+        aria-live="polite"
+    ></div>
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+        <div class="dashboard-header-left">
+            <button
+                type="button"
+                class="dashboard-menu-button"
+                id="dashboardMenuButton"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+            <a href="dashboard.html" class="dashboard-brand">
+                Crestmont Digital Assets
+            </a>
+        </div>
+
+        <div class="dashboard-header-right">
+            <button
+                type="button"
+                class="notification-button"
+                id="notificationButton"
+                aria-label="Notifications"
+            >
+                🔔
+            </button>
+
+            <a href="profile.html" class="profile-button">
+                <span class="profile-avatar">U</span>
+            </a>
+        </div>
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+        <nav class="dashboard-nav">
+
+            <a href="dashboard.html" class="dashboard-nav-link">
+                <span>⌂</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="dashboard.html#portfolio" class="dashboard-nav-link">
+                <span>◈</span>
+                <span>Portfolio</span>
+            </a>
+
+            <a href="deposit.html" class="dashboard-nav-link">
+                <span>＋</span>
+                <span>Deposit</span>
+            </a>
+
+            <a href="withdraw.html" class="dashboard-nav-link">
+                <span>↗️</span>
+                <span>Withdraw</span>
+            </a>
+
+            <a href="transactions.html" class="dashboard-nav-link">
+                <span>☷</span>
+                <span>Transactions</span>
+            </a>
+
+            <a href="investments.html" class="dashboard-nav-link">
+                <span>◉</span>
+                <span>Investments</span>
+            </a>
+
+            <a href="profile.html" class="dashboard-nav-link">
+                <span>●</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="settings.html" class="dashboard-nav-link active">
+                <span>⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="support.html" class="dashboard-nav-link">
+                <span>?</span>
+                <span>Support</span>
+            </a>
+
+        </nav>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <div class="dashboard-page-heading">
+            <span class="eyebrow">ACCOUNT</span>
+            <h1>Settings</h1>
+            <p>
+                Manage your account, security, notifications, and preferences.
+            </p>
+        </div>
+
+
+        <!-- ACCOUNT SETTINGS -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <div>
+                    <span class="eyebrow">01</span>
+                    <h2>Account Settings</h2>
+                    <p>Manage your basic account preferences.</p>
+                </div>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Account Information</strong>
+                    <p>
+                        Review and update your personal account information.
+                    </p>
+                </div>
+
+                <a
+                    href="profile.html"
+                    class="settings-action"
+                >
+                    View Profile
+                </a>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Currency</strong>
+                    <p>
+                        Choose the currency used to display your account values.
+                    </p>
+                </div>
+
+                <select class="settings-select">
+                    <option>USD</option>
+                    <option>EUR</option>
+                    <option>GBP</option>
+                    <option>JPY</option>
+                </select>
+            </div>
+        </section>
+
+
+        <!-- SECURITY -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <div>
+                    <span class="eyebrow">02</span>
+                    <h2>Security</h2>
+                    <p>Keep your account protected.</p>
+                </div>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Password</strong>
+                    <p>
+                        Change your account password when needed.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="settings-action"
+                    id="changePasswordButton"
+                >
+                    Change Password
+                </button>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Two-Factor Authentication</strong>
+                    <p>
+                        Add an additional security step to your account.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="settings-action"
+                    id="twoFactorButton"
+                >
+                    Manage
+                </button>
+            </div>
+        </section>
+
+
+        <!-- NOTIFICATIONS -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <div>
+                    <span class="eyebrow">03</span>
+                    <h2>Notifications</h2>
+                    <p>Choose how you receive account notifications.</p>
+                </div>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Email Notifications</strong>
+                    <p>
+                        Receive important account and security updates.
+                    </p>
+                </div>
+
+                <label class="settings-toggle">
+                    <input type="checkbox" checked>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Transaction Notifications</strong>
+                    <p>
+                        Receive notifications about account transactions.
+                    </p>
+                </div>
+
+                <label class="settings-toggle">
+                    <input type="checkbox" checked>
+                    <span></span>
+                </label>
+            </div>
+        </section>
+
+
+        <!-- SUPPORT -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <div>
+                    <span class="eyebrow">04</span>
+                    <h2>Support</h2>
+                    <p>Get help with your account.</p>
+                </div>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Contact Support</strong>
+                    <p>
+                        Get assistance with your account or platform questions.
+                    </p>
+                </div>
+
+                <a
+                    href="support.html"
+                    class="settings-action"
+                >
+                    Contact Support
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ACCOUNT MANAGEMENT -->
+        <section class="settings-card">
+            <div class="settings-card-header">
+                <div>
+                    <span class="eyebrow">05</span>
+                    <h2>Account Management</h2>
+                    <p>Manage your account session.</p>
+                </div>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <strong>Log Out</strong>
+                    <p>
+                        Sign out of your Crestmont Digital Assets account.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="settings-action settings-danger"
+                    id="settingsLogoutButton"
+                >
+                    Log Out
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+        <div>
+            <strong>Crestmont Digital Assets</strong>
+            <p>
+                Digital asset investment &amp; portfolio services.
+            </p>
+        </div>
+
+        <div>
+            <p>Head Offices</p>
+            <p>Address to be added</p>
+        </div>
+
+        <div>
+            <p>Support</p>
+            <p>support@crestmontdigitalassets.com</p>
+        </div>
+
+        <div>
+            <p>
+                Terms · Privacy · Risk Disclosure · Fees
+            </p>
+        </div>
+
+        <p class="dashboard-footer-bottom">
+            Crestmont Digital Assets. All rights reserved 2026.
+        </p>
+    </footer>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const passwordButton =
+                document.getElementById("changePasswordButton");
+
+            if (passwordButton) {
+                passwordButton.addEventListener("click", function () {
+                    alert(
+                        "Password changes will be connected to the secure account system."
+                    );
+                });
+            }
+
+            const twoFactorButton =
+                document.getElementById("twoFactorButton");
+
+            if (twoFactorButton) {
+                twoFactorButton.addEventListener("click", function () {
+                    alert(
+                        "Two-factor authentication will be connected to the secure account system."
+                    );
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>

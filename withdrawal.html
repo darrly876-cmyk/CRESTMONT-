@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Withdraw | Crestmont Digital Assets</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- DASHBOARD HEADER -->
+    <header class="dashboard-header">
+
+        <div class="dashboard-header-left">
+
+            <button
+                class="dashboard-menu-toggle"
+                id="dashboardMenuToggle"
+                type="button">
+                ☰
+            </button>
+
+            <a href="dashboard.html" class="dashboard-logo">
+                Crestmont
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-header-right">
+
+            <button
+                class="dashboard-icon-button"
+                id="notificationButton"
+                type="button"
+                aria-label="Notifications">
+                🔔
+            </button>
+
+            <a
+                href="dashboard.html#profile"
+                class="dashboard-profile-button"
+                aria-label="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar">
+
+        <div class="sidebar-brand">
+
+            <span>
+                Crestmont
+            </span>
+
+            <small>
+                Digital Assets
+            </small>
+
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="dashboard.html#portfolio">
+                <span>◈</span>
+                Portfolio
+            </a>
+
+            <a href="deposit.html">
+                <span>＋</span>
+                Deposit
+            </a>
+
+            <a
+                href="withdraw.html"
+                class="active">
+                <span>↗</span>
+                Withdraw
+            </a>
+
+            <a href="transactions.html">
+                <span>▤</span>
+                Transactions
+            </a>
+
+            <a href="investments.html#">
+                <span>◉</span>
+                Investments
+            </a>
+
+
+            <div class="sidebar-divider"></div>
+
+
+            <div class="sidebar-label">
+                ACCOUNT
+            </div>
+
+
+            <a href="profile.html">
+                <span>◯</span>
+                Profile
+            </a>
+
+            <a href="settings.html">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="support.html">
+                <span>?</span>
+                Support
+            </a>
+
+
+            <button
+                type="button"
+                class="sidebar-logout"
+                id="logoutButton">
+
+                <span>↪</span>
+
+                Log Out
+
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <section class="dashboard-section">
+
+
+            <!-- PAGE HEADING -->
+            <div class="dashboard-section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        MOVE YOUR ASSETS
+                    </span>
+
+                    <h1>
+                        Withdraw
+                    </h1>
+
+                    <p>
+                        Request a withdrawal to your verified destination wallet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- AVAILABLE BALANCE -->
+            <div class="withdraw-balance-card">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        AVAILABLE BALANCE
+                    </span>
+
+                    <strong id="withdrawAvailableBalance">
+                        $0.00
+                    </strong>
+
+                </div>
+
+                <span class="balance-status">
+                    Available
+                </span>
+
+            </div>
+
+
+            <!-- WITHDRAWAL FORM -->
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            WITHDRAWAL REQUEST
+                        </span>
+
+                        <h2>
+                            Withdrawal Details
+                        </h2>
+
+                        <p>
+                            Enter the destination and amount carefully before submitting your request.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    id="withdrawForm"
+                    class="dashboard-form">
+
+
+                    <!-- ASSET + NETWORK -->
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="withdrawAsset">
+                                Cryptocurrency
+                            </label>
+
+                            <select
+                                id="withdrawAsset"
+                                required>
+
+                                <option value="">
+                                    Select cryptocurrency
+                                </option>
+
+                                <option value="BTC">
+                                    Bitcoin (BTC)
+                                </option>
+
+                                <option value="USDT">
+                                    Tether (USDT)
+                                </option>
+
+                                <option value="SOL">
+                                    Solana (SOL)
+                                </option>
+
+                                <option value="BNB">
+                                    BNB
+                                </option>
+
+                                <option value="XRP">
+                                    XRP
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="withdrawNetwork">
+                                Network
+                            </label>
+
+                            <select
+                                id="withdrawNetwork"
+                                required>
+
+                                <option value="">
+                                    Select network
+                                </option>
+
+                                <option value="bitcoin">
+                                    Bitcoin Network
+                                </option>
+
+                                <option value="ethereum">
+                                    Ethereum / ERC-20
+                                </option>
+
+                                <option value="bsc">
+                                    BNB Smart Chain / BEP-20
+                                </option>
+
+                                <option value="solana">
+                                    Solana Network
+                                </option>
+
+                                <option value="xrp">
+                                    XRP Ledger
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WALLET -->
+                    <div class="form-group">
+
+                        <label for="withdrawWallet">
+                            Destination Wallet Address
+                        </label>
+
+                        <input
+                            type="text"
+                            id="withdrawWallet"
+                            placeholder="Enter wallet address"
+                            autocomplete="off"
+                            required>
+
+                        <small class="form-help">
+                            Carefully verify the address and network before submitting.
+                        </small>
+
+                    </div>
+
+
+                    <!-- AMOUNT -->
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="withdrawAmount">
+                                Withdrawal Amount
+                            </label>
+
+                            <input
+                                type="number"
+                                id="withdrawAmount"
+                                min="0"
+                                step="any"
+                                placeholder="Enter amount"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="withdrawDestination">
+                                Destination Type
+                            </label>
+
+                            <select
+                                id="withdrawDestination"
+                                required>
+
+                                <option value="">
+                                    Select destination
+                                </option>
+
+                                <option value="personal-wallet">
+                                    My Personal Wallet
+                                </option>
+
+                                <option value="exchange">
+                                    Exchange Wallet
+                                </option>
+
+                                <option value="other">
+                                    Other Wallet
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SECURITY CHECKBOX -->
+                    <label class="withdraw-confirmation">
+
+                        <input
+                            type="checkbox"
+                            id="withdrawConfirmation"
+                            required>
+
+                        <span>
+                            I confirm that the cryptocurrency, network, wallet address and withdrawal amount are correct.
+                        </span>
+
+                    </label>
+
+
+                    <!-- INSTRUCTIONS -->
+                    <div class="deposit-instructions">
+
+                        <h3>
+                            Withdrawal information
+                        </h3>
+
+                        <ul>
+
+                            <li>
+                                Withdrawals should only be sent to a wallet you control or are authorized to use.
+                            </li>
+
+                            <li>
+                                Selecting the wrong network may result in permanent loss of funds.
+                            </li>
+
+                            <li>
+                                Your withdrawal request may require additional security verification.
+                            </li>
+
+                            <li>
+                                A withdrawal is not considered completed until the secure backend and relevant blockchain service confirm it.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+                    <button
+                        type="submit"
+                        class="dashboard-primary-button">
+
+                        Submit Withdrawal Request
+
+                    </button>
+
+
+                    <div
+                        class="dashboard-form-message"
+                        id="withdrawMessage">
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- WITHDRAWAL HISTORY -->
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            HISTORY
+                        </span>
+
+                        <h2>
+                            Withdrawal History
+                        </h2>
+
+                        <p>
+                            Submitted withdrawal requests will appear here once connected to the account backend.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="transaction-table-wrapper">
+
+                    <table class="transaction-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Asset
+                                </th>
+
+                                <th>
+                                    Network
+                                </th>
+
+                                <th>
+                                    Amount
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="withdrawalHistoryBody">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    <div class="dashboard-empty-state">
+
+                                        <div class="empty-state-icon">
+                                            ▤
+                                        </div>
+
+                                        <h3>
+                                            No withdrawals yet
+                                        </h3>
+
+                                        <p>
+                                            Your withdrawal history will appear here after requests are submitted and verified.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECURITY NOTICE -->
+            <div class="dashboard-info-note">
+
+                <div class="dashboard-info-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <strong>
+                        Security notice
+                    </strong>
+
+                    <p>
+                        Withdrawal requests, available balances, wallet verification and transaction statuses must be controlled by the secure account backend. This page does not approve or process withdrawals by itself.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <div class="footer-brand">
+
+                <strong>
+                    Crestmont Digital Assets
+                </strong>
+
+                <p>
+                    Digital asset investment &amp; portfolio services
+                </p>
+
+            </div>
+
+
+            <div class="footer-address">
+
+                <strong>
+                    Head offices
+                </strong>
+
+                <p>
+                    (Business address)<br>
+                    City, State, ZIP<br>
+                    Country
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Risk Disclosure
+                </a>
+
+                <a href="#">
+                    Fees
+                </a>
+
+                <a href="dashboard.html#support">
+                    Contact Support
+                </a>
+
+            </div>
+
+
+            <div class="footer-socials">
+
+                <a href="#" aria-label="WhatsApp">
+                    WA
+                </a>
+
+                <a href="#" aria-label="Telegram">
+                    TG
+                </a>
+
+                <a href="#" aria-label="Email">
+                    @
+                </a>
+
+                <a href="#" aria-label="Phone">
+                    ☎
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    Crestmont Digital Assets. All rights reserved 2026.
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- NOTIFICATIONS -->
+    <div
+        class="notification-panel"
+        id="notificationPanel">
+
+        <div class="notification-panel-header">
+
+            <strong>
+                Notifications
+            </strong>
+
+            <button
+                type="button"
+                id="closeNotificationPanel">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="notification-empty">
+
+            <div>
+                🔔
+            </div>
+
+            <p>
+                No new notifications.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div
+        class="dashboard-toast"
+        id="dashboardToast">
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deposit | Crestmont Digital Assets</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- DASHBOARD HEADER -->
+    <header class="dashboard-header">
+
+        <div class="dashboard-header-left">
+
+            <button class="dashboard-menu-toggle" id="dashboardMenuToggle" type="button">
+                ☰
+            </button>
+
+            <a href="dashboard.html" class="dashboard-logo">
+                Crestmont
+            </a>
+
+        </div>
+
+        <div class="dashboard-header-right">
+
+            <button
+                class="dashboard-icon-button"
+                id="notificationButton"
+                type="button"
+                aria-label="Notifications">
+                🔔
+            </button>
+
+            <a
+                href="dashboard.html#profile"
+                class="dashboard-profile-button"
+                aria-label="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+        <div class="sidebar-brand">
+            <span>Crestmont</span>
+            <small>Digital Assets</small>
+        </div>
+
+        <nav class="dashboard-nav">
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="dashboard.html#portfolio">
+                <span>◈</span>
+                Portfolio
+            </a>
+
+            <a href="deposit.html" class="active">
+                <span>＋</span>
+                Deposit
+            </a>
+
+            <a href="dashboard.html#withdraw">
+                <span>↗</span>
+                Withdraw
+            </a>
+
+            <a href="dashboard.html#transactions">
+                <span>▤</span>
+                Transactions
+            </a>
+
+            <a href="dashboard.html#investments">
+                <span>◉</span>
+                Investments
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-label">
+                ACCOUNT
+            </div>
+
+            <a href="dashboard.html#profile">
+                <span>◯</span>
+                Profile
+            </a>
+
+            <a href="dashboard.html#settings">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="dashboard.html#support">
+                <span>?</span>
+                Support
+            </a>
+
+            <button
+                type="button"
+                class="sidebar-logout"
+                id="logoutButton">
+                <span>↪</span>
+                Log Out
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <section class="dashboard-section">
+
+            <div class="dashboard-section-heading">
+
+                <div>
+                    <span class="section-eyebrow">
+                        FUND YOUR ACCOUNT
+                    </span>
+
+                    <h1>
+                        Make a Deposit
+                    </h1>
+
+                    <p>
+                        Choose a supported deposit method and follow the instructions carefully.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- DEPOSIT METHOD CARDS -->
+            <div class="action-card-grid">
+
+                <button
+                    type="button"
+                    class="dashboard-action-card deposit-method-card active"
+                    data-deposit-method="crypto">
+
+                    <div class="action-card-icon">
+                        ₿
+                    </div>
+
+                    <div>
+                        <h3>Crypto Deposit</h3>
+
+                        <p>
+                            Deposit using Bitcoin, USDT, BNB or Solana.
+                        </p>
+                    </div>
+
+                    <span class="action-card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="dashboard-action-card deposit-method-card"
+                    data-deposit-method="card">
+
+                    <div class="action-card-icon">
+                        $
+                    </div>
+
+                    <div>
+                        <h3>Bank Card</h3>
+
+                        <p>
+                            Deposit using a supported debit or credit card.
+                        </p>
+                    </div>
+
+                    <span class="action-card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- CRYPTO DEPOSIT -->
+            <div
+                class="dashboard-panel deposit-panel"
+                id="cryptoDepositPanel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            CRYPTO
+                        </span>
+
+                        <h2>
+                            Crypto Deposit
+                        </h2>
+
+                        <p>
+                            Select an asset and network to view the deposit instructions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="cryptoDepositForm" class="dashboard-form">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="cryptoAsset">
+                                Cryptocurrency
+                            </label>
+
+                            <select id="cryptoAsset" required>
+
+                                <option value="">
+                                    Select cryptocurrency
+                                </option>
+
+                                <option value="BTC">
+                                    Bitcoin (BTC)
+                                </option>
+
+                                <option value="USDT">
+                                    Tether (USDT)
+                                </option>
+
+                                <option value="BNB">
+                                    BNB
+                                </option>
+
+                                <option value="SOL">
+                                    Solana (SOL)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="cryptoNetwork">
+                                Network
+                            </label>
+
+                            <select id="cryptoNetwork" required>
+
+                                <option value="">
+                                    Select network
+                                </option>
+
+                                <option value="bitcoin">
+                                    Bitcoin Network
+                                </option>
+
+                                <option value="ethereum">
+                                    Ethereum / ERC-20
+                                </option>
+
+                                <option value="bsc">
+                                    BNB Smart Chain / BEP-20
+                                </option>
+
+                                <option value="solana">
+                                    Solana Network
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="deposit-address-box">
+
+                        <div class="deposit-address-header">
+
+                            <div>
+                                <span class="deposit-address-label">
+                                    Deposit Address
+                                </span>
+
+                                <strong id="cryptoDepositAddress">
+                                    Select an asset and network
+                                </strong>
+                            </div>
+
+                            <button
+                                type="button"
+                                id="copyDepositAddress"
+                                class="small-copy-button">
+                                Copy
+                            </button>
+
+                        </div>
+
+                        <p id="cryptoAddressNotice">
+                            Your actual deposit address will appear here once a secure wallet system is connected to the platform.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="cryptoAmount">
+                                Amount
+                            </label>
+
+                            <input
+                                type="number"
+                                id="cryptoAmount"
+                                min="0"
+                                step="any"
+                                placeholder="Enter amount"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="cryptoReference">
+                                Transaction Hash / Reference
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cryptoReference"
+                                placeholder="Optional until payment is sent">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="deposit-instructions">
+
+                        <h3>
+                            Before submitting
+                        </h3>
+
+                        <ul>
+                            <li>Confirm that the selected cryptocurrency matches your deposit.</li>
+                            <li>Confirm that the network matches the receiving address.</li>
+                            <li>Never send funds to an address that you cannot verify.</li>
+                            <li>Blockchain transactions may be irreversible.</li>
+                        </ul>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="dashboard-primary-button">
+                        Submit Crypto Deposit
+                    </button>
+
+                    <div
+                        class="dashboard-form-message"
+                        id="cryptoDepositMessage">
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- BANK CARD DEPOSIT -->
+            <div
+                class="dashboard-panel deposit-panel hidden"
+                id="cardDepositPanel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="section-eyebrow">
+                            BANK CARD
+                        </span>
+
+                        <h2>
+                            Card Deposit
+                        </h2>
+
+                        <p>
+                            Use a supported card through a secure payment processor.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="security-banner">
+
+                    <div class="security-banner-icon">
+                        🔒
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Secure payment processing
+                        </strong>
+
+                        <p>
+                            In production, card payments should be handled by a PCI-compliant payment processor or tokenized checkout. Crestmont should not store raw card numbers or CVV/CVC information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="cardDepositForm" class="dashboard-form">
+
+                    <div class="form-group">
+
+                        <label for="cardholderName">
+                            Cardholder Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cardholderName"
+                            placeholder="Name as shown on card"
+                            autocomplete="cc-name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="cardNumber">
+                            Card Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cardNumber"
+                            placeholder="Enter card number"
+                            autocomplete="cc-number"
+                            inputmode="numeric"
+                            maxlength="19"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="cardExpiryMonth">
+                                Expiration Month
+                            </label>
+
+                            <select
+                                id="cardExpiryMonth"
+                                autocomplete="cc-exp-month"
+                                required>
+
+                                <option value="">
+                                    Month
+                                </option>
+
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="cardExpiryYear">
+                                Expiration Year
+                            </label>
+
+                            <select
+                                id="cardExpiryYear"
+                                autocomplete="cc-exp-year"
+                                required>
+
+                                <option value="">
+                                    Year
+                                </option>
+
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                                <option value="2034">2034</option>
+                                <option value="2035">2035</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="cardCvv">
+                                CVV / CVC
+                            </label>
+
+                            <input
+                                type="password"
+                                id="cardCvv"
+                                placeholder="CVV"
+                                autocomplete="cc-csc"
+                                inputmode="numeric"
+                                maxlength="4"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="cardDepositAmount">
+                            Deposit Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="cardDepositAmount"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter amount in USD"
+                            required>
+
+                    </div>
+
+
+                    <div class="deposit-instructions">
+
+                        <h3>
+                            Card deposit information
+                        </h3>
+
+                        <ul>
+                            <li>Only use a card that you are authorized to use.</li>
+                            <li>Your payment may require additional verification from your bank.</li>
+                            <li>Deposit status should only change after confirmation from the payment provider.</li>
+                            <li>Do not submit card details through insecure channels.</li>
+                        </ul>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="dashboard-primary-button">
+                        Continue to Secure Payment
+                    </button>
+
+                    <div
+                        class="dashboard-form-message"
+                        id="cardDepositMessage">
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- DEPOSIT HISTORY -->
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            HISTORY
+                        </span>
+
+                        <h2>
+                            Deposit History
+                        </h2>
+
+                        <p>
+                            Your confirmed and pending deposits will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="transaction-table-wrapper">
+
+                    <table class="transaction-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Method</th>
+                                <th>Asset</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="depositHistoryBody">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    <div class="dashboard-empty-state">
+
+                                        <div class="empty-state-icon">
+                                            ▤
+                                        </div>
+
+                                        <h3>
+                                            No deposits yet
+                                        </h3>
+
+                                        <p>
+                                            Your deposit history will appear here after a deposit has been verified.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMPORTANT NOTICE -->
+            <div class="dashboard-info-note">
+
+                <div class="dashboard-info-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>
+                        Important
+                    </strong>
+
+                    <p>
+                        Deposit addresses, payment confirmations, balances and transaction statuses must come from the platform's secure backend and connected payment or blockchain services. This page does not create or confirm deposits by itself.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <div class="footer-brand">
+
+                <strong>
+                    Crestmont Digital Assets
+                </strong>
+
+                <p>
+                    Digital asset investment &amp; portfolio services
+                </p>
+
+            </div>
+
+
+            <div class="footer-address">
+
+                <strong>
+                    Head offices
+                </strong>
+
+                <p>
+                    (Business address)<br>
+                    City, State, ZIP<br>
+                    Country
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Risk Disclosure
+                </a>
+
+                <a href="#">
+                    Fees
+                </a>
+
+                <a href="dashboard.html#support">
+                    Contact Support
+                </a>
+
+            </div>
+
+
+            <div class="footer-socials">
+
+                <a href="#" aria-label="WhatsApp">
+                    WA
+                </a>
+
+                <a href="#" aria-label="Telegram">
+                    TG
+                </a>
+
+                <a href="#" aria-label="Email">
+                    @
+                </a>
+
+                <a href="#" aria-label="Phone">
+                    ☎
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    Crestmont Digital Assets. All rights reserved 2026.
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- NOTIFICATION PANEL -->
+    <div
+        class="notification-panel"
+        id="notificationPanel">
+
+        <div class="notification-panel-header">
+
+            <strong>
+                Notifications
+            </strong>
+
+            <button
+                type="button"
+                id="closeNotificationPanel">
+                ×
+            </button>
+
+        </div>
+
+        <div class="notification-empty">
+
+            <div>
+                🔔
+            </div>
+
+            <p>
+                No new notifications.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div
+        class="dashboard-toast"
+        id="dashboardToast">
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+ <script src="script.js"></script>
+
+</body>
+</html>
